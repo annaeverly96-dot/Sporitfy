@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Spotify Mod APK — Premium Music Streaming Without Limits</title>
+  <meta name="description" content="A complete and professional overview of Spotify Mod APK: purpose, features, benefits, risks, and comparison with Spotify Free and Premium." />
+
+  <style>
+    :root{
+      /* Brand-inspired (Spotify-ish) but slightly more premium */
+      --bg: #060A0C;
+      --surface: rgba(255,255,255,.06);
+      --surface-2: rgba(255,255,255,.09);
+      --text: #EAF2F1;
+      --muted: rgba(234,242,241,.72);
+      --muted-2: rgba(234,242,241,.55);
+      --border: rgba(255,255,255,.10);
+      --brand: #1ED760;
+      --brand-2: #14B8A6;
+      --warn: #F59E0B;
+      --danger: #EF4444;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius-sm: 14px;
+      --max: 1180px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background:
+        radial-gradient(1200px 600px at 18% 10%, rgba(30,215,96,.16), transparent 55%),
+        radial-gradient(1000px 520px at 88% 18%, rgba(20,184,166,.14), transparent 50%),
+        radial-gradient(900px 520px at 65% 88%, rgba(30,215,96,.10), transparent 55%),
+        linear-gradient(180deg, #050809 0%, #060A0C 55%, #070D0F 100%);
+      line-height:1.65;
+    }
+
+    a{ color: var(--brand); text-decoration:none; }
+    a:hover{ text-decoration: underline; }
+
+    /* Full width page, centered content */
+    .wrap{
+      width: 100%;
+      padding: 0 18px 80px;
+    }
+    .container{
+      width: min(var(--max), 100%);
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(6,10,12,.72);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      min-width: 220px;
+    }
+    .logo{
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background:
+        radial-gradient(10px 10px at 30% 30%, rgba(255,255,255,.35), transparent 60%),
+        linear-gradient(135deg, rgba(30,215,96,.95), rgba(20,184,166,.85));
+      box-shadow: 0 12px 28px rgba(30,215,96,.18);
+    }
+    .brand h1{
+      font-size: 14px;
+      margin:0;
+      letter-spacing:.2px;
+      font-weight: 700;
+    }
+    .brand p{
+      margin:0;
+      font-size: 12px;
+      color: var(--muted-2);
+    }
+    .nav-links{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .pill{
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      font-size: 13px;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .pill:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.06);
+      border-color: rgba(30,215,96,.28);
+      text-decoration:none;
+    }
+
+    /* Hero */
+    .hero{
+      padding: 44px 0 18px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    .hero-card{
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      overflow:hidden;
+      position:relative;
+    }
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(600px 220px at 10% 0%, rgba(30,215,96,.18), transparent 60%),
+        radial-gradient(520px 220px at 90% 20%, rgba(20,184,166,.14), transparent 60%);
+      pointer-events:none;
+      opacity:.9;
+    }
+    .hero-card > *{ position:relative; z-index:1; }
+    .kicker{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid rgba(30,215,96,.28);
+      background: rgba(30,215,96,.08);
+      padding: 8px 12px;
+      border-radius: 999px;
+      width: fit-content;
+    }
+    .dot{
+      width: 8px; height: 8px; border-radius: 999px;
+      background: var(--brand);
+      box-shadow: 0 0 0 6px rgba(30,215,96,.12);
+    }
+    .hero h2{
+      margin: 12px 0 10px;
+      font-size: clamp(24px, 3.2vw, 40px);
+      line-height: 1.15;
+      letter-spacing: -.6px;
+    }
+    .hero p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 70ch;
+    }
+    .cta-row{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      font-weight: 650;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration:none;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.06);
+      border-color: rgba(30,215,96,.30);
+      text-decoration:none;
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(30,215,96,.95), rgba(20,184,166,.85));
+      border-color: rgba(255,255,255,.16);
+      color: #04110A;
+      box-shadow: 0 18px 48px rgba(30,215,96,.18);
+    }
+    .btn.primary:hover{
+      border-color: rgba(255,255,255,.28);
+    }
+
+    .stats{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      border-radius: var(--radius);
+      padding: 18px;
+      display:grid;
+      gap: 12px;
+    }
+    .stat{
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+    }
+    .stat b{
+      display:block;
+      font-size: 13px;
+      letter-spacing:.2px;
+      margin-bottom: 2px;
+    }
+    .stat span{
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Sections */
+    main{ padding-top: 10px; }
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 14px;
+    }
+    .card{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: 0 18px 55px rgba(0,0,0,.25);
+    }
+    .card h3{
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing: -.2px;
+    }
+    .card p{ margin: 0 0 12px; color: var(--muted); }
+    .card p:last-child{ margin-bottom: 0; }
+
+    /* Highlight callouts */
+    .callout{
+      display:flex;
+      gap: 12px;
+      align-items:flex-start;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.10);
+      padding: 14px 14px;
+      background: rgba(255,255,255,.03);
+      margin: 14px 0 0;
+    }
+    .badge{
+      flex: 0 0 auto;
+      width: 36px; height: 36px;
+      border-radius: 14px;
+      display:grid;
+      place-items:center;
+      border: 1px solid rgba(30,215,96,.28);
+      background: rgba(30,215,96,.10);
+      box-shadow: 0 10px 26px rgba(30,215,96,.10);
+    }
+    .callout b{ display:block; margin-bottom: 4px; }
+    .callout small{ color: var(--muted-2); font-size: 12.5px; }
+
+    /* Lists */
+    ul{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+    li{ margin: 8px 0; }
+
+    /* Table */
+    .table-wrap{
+      width: 100%;
+      overflow:auto;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      margin-top: 12px;
+    }
+    table{
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+    th, td{
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      text-align:left;
+      font-size: 14px;
+      color: var(--muted);
+      vertical-align: top;
+    }
+    th{
+      color: var(--text);
+      font-size: 13px;
+      letter-spacing: .25px;
+      background: rgba(255,255,255,.04);
+      position: sticky;
+      top: 0;
+    }
+    tr:hover td{ background: rgba(255,255,255,.025); }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.02);
+      color: var(--text);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .tag.ok{ border-color: rgba(30,215,96,.25); background: rgba(30,215,96,.08); }
+    .tag.warn{ border-color: rgba(245,158,11,.28); background: rgba(245,158,11,.10); }
+    .tag.bad{ border-color: rgba(239,68,68,.28); background: rgba(239,68,68,.10); }
+
+    /* Footer */
+    footer{
+      margin-top: 22px;
+      border-top: 1px solid var(--border);
+      background: rgba(0,0,0,.25);
+    }
+    .footer-inner{
+      padding: 26px 0;
+      display:grid;
+      gap: 12px;
+    }
+    .footer-top{
+      display:flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
+      align-items:flex-start;
+    }
+    .footer-top p{
+      margin:0;
+      color: var(--muted);
+      max-width: 70ch;
+      font-size: 13.5px;
+    }
+    .social{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+    .social a{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      font-size: 13px;
+      text-decoration:none;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .social a:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.06);
+      border-color: rgba(30,215,96,.28);
+    }
+    .footer-bottom{
+      display:flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: var(--muted-2);
+      font-size: 12.5px;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .nav{ padding: 12px 0; }
+      .nav-links{ justify-content: flex-start; }
+      table{ min-width: 640px; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="wrap">
+      <div class="container">
+        <div class="nav">
+          <div class="brand">
+            <div class="logo" aria-hidden="true"></div>
+            <div>
+              <h1>Spotify Mod APK</h1>
+              <p>Premium Music Streaming Without Limits</p>
+            </div>
+          </div>
+
+          <nav class="nav-links" aria-label="Page navigation">
+            <a class="pill" href="#what-is">What it is</a>
+            <a class="pill" href="#features">Features</a>
+            <a class="pill" href="#comparison">Comparison</a>
+            <a class="pill" href="#safety">Safety</a>
+            <a class="pill" href="#seo">SEO Value</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="container">
+
+      <!-- HERO / INTRO -->
+      <section class="hero">
+        <div class="hero-grid">
+
+          <div class="hero-card">
+            <div class="kicker"><span class="dot" aria-hidden="true"></span> Professional overview • Features • Benefits • Risks</div>
+
+            <h2>Spotify Mod APK Premium Music Streaming Without Limits</h2>
+
+            <p>
+              Music streaming has become an essential part of modern digital life, and Spotify is one of the most widely used platforms across the world.
+              Millions of users rely on Spotify to discover new music, enjoy podcasts, and create personalized playlists for daily activities.
+              Despite its popularity, the free version of Spotify comes with several restrictions that reduce user satisfaction.
+              These limitations encourage many users to search for alternatives such as Spotify Mod APK.
+            </p>
+
+            <!-- FIRST LINK (Intro mid) -->
+            <p style="margin-top:12px;">
+              If you’re exploring the topic in detail, you can check
+              <a href="https://spotiifyapk.com/" target="_blank" rel="noopener noreferrer">Spotify mod APK</a>
+              for more related information and context.
+            </p>
+
+            <p style="margin-top:12px;">
+              Spotify Mod APK is a modified version of the official Spotify application that provides access to premium features without a paid subscription.
+              This article offers a complete and professional overview of Spotify Mod APK, clearly explaining its purpose, features, benefits, risks,
+              and differences from the official app in a balanced and informative manner.
+            </p>
+
+            <div class="cta-row">
+              <a class="btn primary" href="#comparison">Explore Comparison Table</a>
+              <a class="btn" href="#risks">Understand Risks</a>
+              <a class="btn" href="#conclusion">Read Conclusion</a>
+            </div>
+          </div>
+
+          <aside class="stats" aria-label="Quick highlights">
+            <div class="stat">
+              <b>What users want</b>
+              <span>Fewer interruptions, better control, higher audio quality.</span>
+            </div>
+            <div class="stat">
+              <b>Main trade-off</b>
+              <span>Convenience vs. account safety and long-term reliability.</span>
+            </div>
+            <div class="stat">
+              <b>Important note</b>
+              <span>Modified apps operate outside Spotify’s official ecosystem.</span>
+            </div>
+          </aside>
+
+        </div>
+      </section>
+
+      <!-- BODY -->
+      <main class="grid">
+
+        <article class="card" id="what-is">
+          <h3>What Is Spotify Mod APK</h3>
+          <p>
+            Spotify Mod APK is an altered version of the original Spotify application developed by third party sources.
+            Its primary purpose is to unlock premium level features that are normally available only to paid subscribers.
+            This version is not distributed through official app stores and must be installed manually on Android devices.
+          </p>
+          <p>
+            Users often turn to Spotify Mod APK to gain more control over music playback, remove interruptions, and improve audio quality.
+            While it delivers several attractive features, it operates outside Spotify official system and does not provide guaranteed stability or security.
+          </p>
+
+          <div class="callout">
+            <div class="badge" aria-hidden="true">ⓘ</div>
+            <div>
+              <b>Balanced view</b>
+              <small>It may feel “premium-like,” but it can come with serious limitations in stability, safety, and compliance.</small>
+            </div>
+          </div>
+        </article>
+
+        <section class="card" id="problems">
+          <h3>Problems Users Face With Spotify Free Version</h3>
+          <p>
+            Many Spotify users experience frustration when using the free version of the app. One of the most common problems is frequent
+            advertisements that interrupt music sessions. These ads can break focus during workouts, studying, or long listening sessions.
+          </p>
+          <p>
+            Another major issue is limited skips, which restrict the ability to choose or repeat favorite songs. Free users are also locked into
+            shuffle mode for many playlists, reducing personalization. Audio quality is capped at a lower level, preventing users from enjoying
+            high definition sound. These pain points push users toward modified versions that promise a smoother experience.
+          </p>
+        </section>
+
+        <section class="card" id="features">
+          <h3>Main Features of Spotify Mod APK</h3>
+          <p>
+            Spotify Mod APK is designed to remove most of the restrictions found in the free version. It allows uninterrupted music streaming
+            without ads, giving users a continuous listening experience. Unlimited skips enable full control over song selection, allowing users
+            to replay or skip tracks freely.
+          </p>
+          <p>
+            The mod version also provides access to higher audio quality, making music clearer and more immersive. On demand playback removes
+            shuffle restrictions, giving users the freedom to play any song at any time. Together, these features create a premium style experience
+            without requiring a subscription.
+          </p>
+        </section>
+
+        <section class="card" id="reasons">
+          <h3>Key Reasons Users Choose Spotify Mod APK</h3>
+          <p>
+            Users choose Spotify Mod APK for different reasons, mainly related to convenience and cost savings. Below is a dedicated section
+            highlighting the main reasons in a structured list format.
+          </p>
+          <ul>
+            <li><strong>Ad free listening:</strong> allows users to enjoy music without interruptions.</li>
+            <li><strong>Unlimited control over playback:</strong> including skipping and repeating songs.</li>
+            <li><strong>Improved audio quality:</strong> appeals to users who value sound clarity.</li>
+            <li><strong>Freedom of choosing any track:</strong> without shuffle restrictions.</li>
+            <li><strong>Cost savings:</strong> avoiding monthly subscription costs is attractive for students and casual listeners.</li>
+          </ul>
+        </section>
+
+        <section class="card" id="benefits">
+          <h3>Benefits of Using Spotify Mod APK</h3>
+          <p>
+            Spotify Mod APK enhances the music listening experience by eliminating distractions and restrictions. Continuous playback helps users
+            stay focused and relaxed during long listening sessions. The ability to select specific songs improves personalization and overall satisfaction.
+          </p>
+          <p>
+            From a financial perspective, Spotify Mod APK removes the need for recurring payments. This makes premium style features accessible to
+            users who cannot afford or prefer not to pay for subscriptions. For many users, this combination of freedom and savings is the main appeal
+            of the mod version.
+          </p>
+        </section>
+
+        <section class="card" id="risks">
+          <h3>Limitations and Potential Risks</h3>
+          <p>
+            Despite its advantages, Spotify Mod APK has several limitations that users should understand. Offline downloads usually do not function
+            properly because this feature depends on Spotify servers. Account suspension is another major risk, as Spotify actively monitors unauthorized usage.
+          </p>
+          <p>
+            Security and privacy concerns also exist, especially if the application is downloaded from unreliable sources. Modified apps do not receive
+            official updates, which can result in bugs or compatibility issues over time. These risks make Spotify Mod APK unsuitable for users who
+            prioritize long term stability and account safety.
+          </p>
+
+          <div class="callout">
+            <div class="badge" aria-hidden="true">⚠</div>
+            <div>
+              <b>Risk reminder</b>
+              <small>Even if it works temporarily, it may not be reliable for long-term use and could affect account access.</small>
+            </div>
+          </div>
+
+          <!-- SECOND LINK (Content mid) -->
+          <p style="margin-top:14px;">
+            For readers who want a broader perspective on premium-style features and what to expect, visit
+            <a href="https://spotiifyapk.com/" target="_blank" rel="noopener noreferrer">Spotify premium-style streaming details</a>
+            to explore related information.
+          </p>
+        </section>
+
+        <section class="card" id="comparison">
+          <h3>Comparison Between Spotify Versions</h3>
+          <p>
+            The table below provides a clear comparison between Spotify Free, Spotify Premium, and Spotify Mod APK to help users understand the differences.
+          </p>
+
+          <div class="table-wrap" role="region" aria-label="Spotify Versions Comparison Table" tabindex="0">
+            <table>
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Spotify Free</th>
+                  <th>Spotify Premium</th>
+                  <th>Spotify Mod APK</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Advertisements</strong></td>
+                  <td><span class="tag warn">Available</span></td>
+                  <td><span class="tag ok">Not available</span></td>
+                  <td><span class="tag ok">Not available</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Song Skips</strong></td>
+                  <td><span class="tag warn">Limited</span></td>
+                  <td><span class="tag ok">Unlimited</span></td>
+                  <td><span class="tag ok">Unlimited</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Audio Quality</strong></td>
+                  <td><span class="tag warn">Standard</span></td>
+                  <td><span class="tag ok">High</span></td>
+                  <td><span class="tag ok">High</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Offline Listening</strong></td>
+                  <td><span class="tag warn">Not available</span></td>
+                  <td><span class="tag ok">Available</span></td>
+                  <td><span class="tag warn">Mostly unavailable</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Account Safety</strong></td>
+                  <td><span class="tag ok">High</span></td>
+                  <td><span class="tag ok">Very high</span></td>
+                  <td><span class="tag bad">Low</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Legal Status</strong></td>
+                  <td><span class="tag ok">Legal</span></td>
+                  <td><span class="tag ok">Legal</span></td>
+                  <td><span class="tag bad">Not legal</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="card" id="safety">
+          <h3>Is Spotify Mod APK Safe to Use</h3>
+          <p>
+            Safety is one of the biggest concerns when using Spotify Mod APK. Since it is not an official application, there is no guarantee of data
+            protection or account security. Users may lose access to their Spotify accounts if violations are detected.
+          </p>
+          <p>
+            While some versions may work temporarily, they are not reliable for long term use. Users who value consistent updates, customer support,
+            and legal compliance are better suited to official Spotify plans, including student or family subscriptions.
+          </p>
+        </section>
+
+        <section class="card" id="seo">
+          <h3>SEO Value of Spotify Mod APK Topic</h3>
+          <p>
+            Spotify Mod APK is a highly searched keyword due to increasing demand for free premium features. Android users frequently look for ways to
+            enhance their music experience without additional costs. This makes the topic valuable for SEO focused content in the technology and app niche.
+          </p>
+          <p>
+            High quality articles that clearly explain features, benefits, and risks tend to perform better in search results. Providing balanced and
+            informative content helps build trust and improves visibility.
+          </p>
+        </section>
+
+        <section class="card" id="conclusion">
+          <h3>Conclusion</h3>
+          <p>
+            Spotify Mod APK offers an appealing alternative for users who are dissatisfied with ads, limited skips, and restricted features in the free
+            version. It delivers a premium like experience with enhanced control and better audio quality. However, it also carries risks related to security,
+            legality, and account stability.
+          </p>
+          <p>
+            Users should carefully consider both advantages and disadvantages before choosing to use modified applications. For those seeking long term
+            reliability and peace of mind, official Spotify subscriptions remain the safest and most dependable option.
+          </p>
+        </section>
+
+      </main>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-top">
+            <div>
+              <div class="brand" style="min-width:auto;">
+                <div class="logo" aria-hidden="true" style="width:34px;height:34px;border-radius:12px;"></div>
+                <div>
+                  <h1 style="margin:0;font-size:13.5px;">Spotify Mod APK Overview</h1>
+                  <p style="margin:0;color:var(--muted-2);font-size:12.5px;">Readable • Engaging • Full-width UI</p>
+                </div>
+              </div>
+              <p style="margin-top:10px;">
+                This page is designed for an informative, balanced overview. Always prioritize account safety, privacy, and legal compliance
+                when choosing any app version.
+              </p>
+            </div>
+
+            <div class="social" aria-label="Social links">
+              <!-- Replace # with your real profiles -->
+              <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+              <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a href="#" target="_blank" rel="noopener noreferrer">YouTube</a>
+              <a href="#" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <span>© <script>document.write(new Date().getFullYear())</script> • All rights reserved</span>
+            <span>Built with a brand-forward, premium UI/UX layout</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
